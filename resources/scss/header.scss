@@ -1,0 +1,267 @@
+@use 'base' as *;
+
+.site-header {
+
+    background-color: $background-color;
+
+    .navigation-bar {
+    display: flex;
+    margin-right: 2.4rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 250.691px;
+
+    @media (min-width: $desktop) {
+        width:100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 12.4rem;
+      flex-shrink: 0;
+       background-color: $background-color;
+    }
+
+    .site-logo img{
+        width: 8rem;
+        height: 7rem;
+        flex-shrink: 0;
+        object-fit: contain;
+
+        @media (min-width: $desktop) {
+            height: 14rem;
+            width: 18rem;
+            flex-shrink: 0;
+        }
+    }
+
+    .menu-toggle{
+        display: fixed;
+        background: none;
+        border: none;
+        height: 2.4rem;
+        width: 2.4rem; 
+
+
+        &.hidden {
+            display: none;
+        }
+   
+        
+        @media (min-width: $desktop) {
+            display: none;
+        }
+
+        .hamburger-line {
+            display: block;
+            color: $font-color;
+            width: 1.8rem;
+            height: 0.1rem;
+            background-color: $font-color;
+            margin: 0.5rem 0;
+            transition: all 0.3s ease;
+            transform-origin: center;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .main-menu{
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50vw;
+        height: 100vh;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        padding-top: 8.7rem;
+        display: flex;
+        flex-direction: column;
+        align-items: end; 
+        background-color: $background-color;
+
+            .menu-close {
+                display: none;
+                position: absolute;
+                top: 25px;
+                right: 25px;
+                width: 20.75px;
+                height: 20.38px;
+                font-size: $mobileTextSize;
+                background: none;
+                background: $gradient-color;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                border: none;
+                border-image-slice: 1;
+                color: white;
+                cursor: pointer;
+            }
+
+            ul {
+                list-style: none;
+                margin: 0;
+                padding-right: 2rem;
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                
+                li {
+                font-family: $textFont;
+                font-weight: $mobileTextWeight;  
+                line-height: 1.8rem;
+                letter-spacing: 0;
+                width: auto;
+                font-size: $mobileTextSize;
+                text-align: end;
+
+                &:last-child {
+                    background: linear-gradient(93.05deg, #64E275 -74.03%, #11B6BC 12.62%, #1776B1 99.27%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+
+                      a{
+                        font-weight: $maxTextWeight;
+                        text-transform: uppercase;
+
+                         &::after {
+
+                                content: "";
+                                display: inline-block;
+                                width: 1.4rem;
+                                height: 1.8rem;
+                                margin-left: 0.4rem;
+                                background-image: url('../../img/CaretLeft.svg');
+                                background-repeat: no-repeat;
+                                background-size: contain;
+                                vertical-align: -0.4rem;
+
+                        }
+                    }
+                }
+
+                a {
+                    color: $font-color;
+                    text-align: center;
+                    font-feature-settings: 'liga' off, 'clig' off;
+                    font-family: "Space Grotesk";
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 18px;
+                    text-decoration: none;
+                }
+            }
+        }
+        
+        &.open{
+             transform: translateX(0);
+
+            .menu-close {
+                display: block;
+            }
+        }
+
+        @media (min-width: $desktop) {
+            display: none;
+        }
+    }
+    /* Hide desktop menu on small screens */
+    .desktop-menu {
+        display: none;
+        
+        /* Show only on larger screens */
+        @media (min-width: 768px) {  
+                display: inline-flex;
+                align-items: center;
+                background: none;
+
+                padding-right: 6rem;
+
+
+            ul {
+                list-style: none;
+                display: flex;
+                flex-direction: row;
+                gap: 7.9rem; 
+                padding: 0;
+                margin-left: auto; 
+                width: 68.6rem;    
+                height: 3.3rem;     
+
+            li {
+                text-align: right;
+                
+                 &:last-child {
+                    background: $gradient-color;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+
+                    a{
+                        font-weight: $maxTextWeight;
+                        text-transform: uppercase;
+
+                         &::after {
+
+                                content: "";
+                                display: inline-block;
+                                width: 1.9rem;
+                                height: 2.3rem;
+                                margin-left: 0.4rem;
+                                 background-image: url('../../img/CaretLeft.svg');
+                                background-repeat: no-repeat;
+                                background-size: contain;
+                                vertical-align: -0.3rem;
+
+                        }
+                    }    
+                }
+
+                a {
+                font-size: $desktopTextSize;
+                font-weight: $desktopTextWeight;
+                font-style: normal;
+                line-height: normal;
+                text-decoration: none;
+                color: $font-color;
+                }
+            }
+        }
+        }
+                }
+            }
+
+// When menu is open
+.site-header.menu-open  {
+    display: block;
+    opacity: 1;
+    background-color: $opacity-background-color;
+}
+}
+
+
+body.menu-open {
+    &::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 50vw;
+        height: 100vh;
+        background-color: $opacity-background-color;
+        z-index: 999;
+        transition: opacity 0.3s ease-in-out;
+        
+        @media (min-width: $desktop) {
+            display: none;
+        }
+    }
+}
