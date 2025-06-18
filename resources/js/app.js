@@ -1,6 +1,4 @@
 jQuery(document).ready(function($) {
-  
-  console.log('hi');
 
   const $menuToggle = $('.menu-toggle');
   const $menu = $('.main-menu');

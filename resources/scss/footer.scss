@@ -1,0 +1,27 @@
+@use 'base' as *;
+
+
+.site-footer{
+    .buttom-footer{
+        width: 100%;
+        background: $gradient-backgroud;
+        justify-content: center;
+        max-height: 4.8rem;
+
+        .footer-logos{
+                padding: 1.2rem 2.9rem 1.8rem 2.9rem;
+                display: flex;
+                justify-content:center;
+                gap: 0.9rem;
+                align-items: center;
+
+            img {
+                max-width: 6rem;
+                max-height: 1.82rem;
+                width: auto;
+                object-fit: contain;
+            }
+        }
+    }
+    
+}
