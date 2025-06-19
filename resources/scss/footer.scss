@@ -1,27 +1,130 @@
 @use 'base' as *;
 
+.site-footer {
+    .buttom-footer {
 
-.site-footer{
-    .buttom-footer{
-        width: 100%;
+         width: 100%;
         background: $gradient-backgroud;
         justify-content: center;
         max-height: 4.8rem;
 
-        .footer-logos{
-                padding: 1.2rem 2.9rem 1.8rem 2.9rem;
+        @media (min-width: $tablet) {
+
+            display: flex;
+            align-items: center;
+            min-height: clamp(4.8rem, 6vw, 9.1rem);
+            max-width: 100vw;
+            overflow-x: hidden;
+            box-sizing: border-box;
+            flex-direction: row;
+            justify-content: space-between;
+             padding: 0 clamp(3rem, 4vw, 15rem);
+        }
+
+        .logo-RAKIA {
+            display: none;
+
+            @media (min-width: $tablet) {
+                display: flex;
+                align-items: center;
+                gap: clamp(0.4rem, 1vw, 0.8rem);
+                order: 1;
+                flex-shrink: 0;
+             
+
+                p {
+                    color: $font-color;
+                    font-size: clamp(1.2rem, 2vw, 1.8rem);
+                    font-style: $font-style;
+                    font-weight: 500;
+                    line-height: $line-height;
+                    white-space: nowrap;
+                    margin: 0;
+                }
+
+                img {
+                    width: clamp(3.5rem, 5vw, 6.7rem);
+                    height: clamp(3.5rem, 5vw, 6.7rem);
+                    flex-shrink: 0;
+                    object-fit: contain;
+                }
+            }
+        }
+
+        .policy-menu {
+            display: none;
+
+            @media (min-width: $tablet) {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                order: 2;
+                flex: 1;
+                padding: clamp(1rem, 3vw, 3.8rem) clamp(1rem, 2vw, 4rem) clamp(1rem, 3vw, 3.3rem);
+
+                ul {
+                    list-style: none;
+                    display: flex;
+                    gap: clamp(0.5rem, 2vw, 3rem);
+                    padding: 0;
+                    margin: 0;
+                    justify-content: center;
+                    flex-wrap: rap;
+
+                    li {
+                        a {
+                            font-weight: 300;
+                            font-size: clamp(1rem, 1.5vw, $mobileTextSize);
+                            line-height: $line-height;
+                            font-style: $font-style;
+                            text-decoration: none;
+                            color: $font-color;
+                            white-space: nowrap;
+                            transition: opacity 0.2s ease;
+
+                            &:hover {
+                                opacity: 0.8;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer-logos {
+            padding: 1.2rem 2.9rem 1.8rem;
                 display: flex;
                 justify-content:center;
                 gap: 0.9rem;
                 align-items: center;
 
+
+            @media (min-width: $tablet) {
+                padding: 0;
+                 display: flex;
+                justify-content:end;
+                align-items: center;
+                gap: clamp(0.5rem, 2vw, 0.9rem);
+                order: 3;
+                flex-shrink: 0;
+                  gap: clamp(0.5rem, 2vw, 3.7rem);
+                  white-space: wrap;
+
             img {
-                max-width: 6rem;
-                max-height: 1.82rem;
-                width: auto;
+                
+                width: clamp(5rem, 9%, 10rem);
+                height: clamp(1rem, 20%, 4rem);
                 object-fit: contain;
+                flex-shrink: 1;
             }
+
+        }
+        img{
+            width: 10%;
+            height: 8%;
+            object-fit: contain;
+
         }
     }
-    
+}
 }

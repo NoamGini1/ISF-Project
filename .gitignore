@@ -1,2 +1,2 @@
-wp-content/themes/practice-theme/dist
-wp-content/themes/practice-theme/node_modules
+/dist
+/node_modules
