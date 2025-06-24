@@ -1,0 +1,30 @@
+@use 'base' as *;
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.6rem 2rem;
+    font-size: $mobileSmallTextSize;
+    font-weight: 700;
+
+    background-color: transparent;
+    color: $font-color;
+
+    border: 0.1rem solid $font-color;
+    border-radius: 0.1rem;
+
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    @media (min-width: $desktop) {
+        font-size: $desktopTextSize;
+        border: 0.2rem solid $font-color;
+        border-radius: 0.2rem;
+        padding: 0 4rem;
+        width: auto;
+        height: 5.5rem;
+    }
+}

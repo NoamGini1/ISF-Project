@@ -1,40 +1,240 @@
 @use 'base' as *;
 
 .site-footer {
+
+    .top-logos {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-right: 2rem;
+
+        @media (min-width: $desktop) {
+            display: none;
+        }
+
+        .site-logo img {
+            width: 8rem;
+            height: 7rem;
+            flex-shrink: 0;
+            object-fit: contain;
+        }
+
+        .logo-RAKIA {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.4rem, 1vw, 0.8rem);
+            order: 1;
+            flex-shrink: 0;
+
+
+            p {
+                color: $font-color;
+                font-size: clamp($mobileSmallTextSize, 2vw, $mobileBigTextSize);
+                font-style: $font-style;
+                font-weight: 500;
+                line-height: $line-height;
+                white-space: nowrap;
+                margin: 0;
+            }
+
+            img {
+                width: clamp(3.5rem, 5vw, 6.7rem);
+                height: clamp(3.5rem, 5vw, 6.7rem);
+                flex-shrink: 0;
+                object-fit: contain;
+            }
+        }
+    }
+
+    .form-menus-container {
+
+        @media (min-width: $desktop) {
+            display: flex;
+            flex-direction: row;
+
+            align-items: flex-start;
+
+            .footer-subscribe-form {
+                order: 2;
+                width: 100%;
+
+            }
+        }
+
+        .footer-menus {
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 4rem 3rem 1rem 3rem;
+
+            width: 100vw;
+
+            @media (min-width: $desktop) {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 4rem 5vw 3rem 5vw;
+                order: 1;
+            }
+
+
+            .site-logo {
+                display: none;
+
+                @media (min-width:$desktop) {
+                    display: inline;
+                    flex-shrink: 0;
+
+                    img {
+                        height: 11rem;
+                        width: 14rem;
+
+                        margin-left: -4rem;
+                        margin-bottom: -3rem;
+
+                    }
+                }
+            }
+
+            .footer-menus-container {
+                display: flex;
+                justify-content: start;
+                flex-wrap: wrap;
+                width: 100%;
+                justify-content: space-between;
+                border-top: 0.02rem solid $font-color;
+
+                @media (min-width: $desktop) {
+                    border-top: none;
+                }
+
+                nav {
+                    .menu {
+                        list-style: none;
+                        padding: 0;
+
+                        li {
+                            margin-bottom: 1.2rem;
+
+                            a {
+                                color: white;
+                                text-decoration: none;
+
+                            }
+                        }
+                    }
+                }
+
+                .main-menu {
+                    text-align: left;
+                    font-weight: 600;
+                    font-size: $mobileSmallTextSize;
+
+                    @media (min-width: $desktop) {
+                        font-size: $mobileBigTextSize;
+                    }
+
+                    .menu {
+                        li {
+
+                            &:nth-child(3) a {
+                                text-decoration: underline;
+                            }
+
+                            &:last-child {
+                                display: none;
+                            }
+                        }
+                    }
+
+                }
+
+                .policy-menu {
+                    text-align: left;
+                    font-weight: 400;
+                    font-size: $mobileSmallTextSize;
+
+
+                    @media (min-width: $desktop) {
+                        display: none;
+                    }
+                }
+            }
+
+            .copywrites {
+                margin-top: 3rem;
+                font-size: 1rem;
+                text-align: start;
+                color: $font-color;
+                font-weight: 300;
+                width: 75%;
+
+                @media (min-width: $desktop) {
+                    font-size: $mobileTextSize;
+                }
+
+                .text-logo-copywrites {
+
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+
+                }
+
+                p {
+                    margin: 0.3rem 0;
+
+                }
+
+                img {
+                    display: inline-block;
+                    height: 0.7em;
+                    margin: 0 0.2rem;
+                    vertical-align: middle;
+
+                    @media (min-width: $desktop) {
+                        height: 1.4rem;
+                    }
+                }
+            }
+        }
+    }
+
+
     .buttom-footer {
 
-         width: 100%;
+        width: 100%;
         background: $gradient-backgroud;
         justify-content: center;
         max-height: 4.8rem;
 
-        @media (min-width: $tablet) {
+        @media (min-width: $desktop) {
 
             display: flex;
             align-items: center;
             min-height: clamp(4.8rem, 6vw, 9.1rem);
             max-width: 100vw;
             overflow-x: hidden;
-            box-sizing: border-box;
+
             flex-direction: row;
             justify-content: space-between;
-             padding: 0 clamp(3rem, 4vw, 15rem);
+            padding: 0 clamp(3rem, 5vw, 15rem);
         }
 
         .logo-RAKIA {
             display: none;
 
-            @media (min-width: $tablet) {
+            @media (min-width: $desktop) {
                 display: flex;
                 align-items: center;
                 gap: clamp(0.4rem, 1vw, 0.8rem);
                 order: 1;
                 flex-shrink: 0;
-             
+
 
                 p {
                     color: $font-color;
-                    font-size: clamp(1.2rem, 2vw, 1.8rem);
+                    font-size: clamp($mobileSmallTextSize, 2vw, $mobileBigTextSize);
                     font-style: $font-style;
                     font-weight: 500;
                     line-height: $line-height;
@@ -54,7 +254,7 @@
         .policy-menu {
             display: none;
 
-            @media (min-width: $tablet) {
+            @media (min-width: $desktop) {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -92,39 +292,49 @@
         }
 
         .footer-logos {
-            padding: 1.2rem 2.9rem 1.8rem;
-                display: flex;
-                justify-content:center;
-                gap: 0.9rem;
-                align-items: center;
+
+            padding-top: 1.2rem;
+            padding-bottom: 1.8rem;
+            ;
+            display: flex;
+            justify-content: center;
+            gap: 0.9rem;
+            align-items: center;
 
 
-            @media (min-width: $tablet) {
+            @media (min-width: $desktop) {
                 padding: 0;
-                 display: flex;
-                justify-content:end;
+                display: flex;
+                justify-content: end;
                 align-items: center;
-                gap: clamp(0.5rem, 2vw, 0.9rem);
+
                 order: 3;
                 flex-shrink: 0;
-                  gap: clamp(0.5rem, 2vw, 3.7rem);
-                  white-space: wrap;
+                gap: clamp(0.5rem, 2vw, 3.7rem);
 
-            img {
-                
-                width: clamp(5rem, 9%, 10rem);
-                height: clamp(1rem, 20%, 4rem);
-                object-fit: contain;
-                flex-shrink: 1;
             }
 
-        }
-        img{
-            width: 10%;
-            height: 8%;
-            object-fit: contain;
+            img {
 
+                max-width: 6.2rem;
+                min-width: 2.6rem;
+                min-height: 1.5rem;
+                max-height: 1.8rem;
+                object-fit: contain;
+
+                @media (min-width: $desktop) {
+
+                    min-height: 3rem;
+                    max-height: 4.1rem;
+                    object-fit: contain;
+
+                    width: clamp(5.2rem, 8vw, 15rem);
+
+
+
+                }
+
+            }
         }
     }
-}
 }
