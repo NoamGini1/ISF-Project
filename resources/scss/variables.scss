@@ -1,0 +1,28 @@
+//variables
+$mobile: 480px;
+$desktop: 768px;
+$large-desktop: 1200px;
+
+// Spacing
+$container-max-width: 120rem;
+$container-width: 95%;
+
+//Fonts
+$textFont : 'Space Grotesk';
+$mobileTextSize : 1.5rem;
+$desktopTextSize: 2.4rem;
+$desktopTitleTextSize: 4.8rem;
+$mobileSmallTextSize: 1.2rem;
+$mobileBigTextSize: 1.8rem;
+$font-style: normal;
+$line-height: normal;
+
+$mobileTextWeight: 400;
+$desktopTextWeight: 400;
+$maxTextWeight: 700;
+
+
+// Z-index layers
+$z-logo: 1001;
+$z-menu: 1000;
+$z-fixed-header: 10000;

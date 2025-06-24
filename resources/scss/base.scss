@@ -1,38 +1,7 @@
-// Colors
-$font-color: #FFFFFF;
-$background-color: black;
-$opacity-background-color: rgba(255, 255, 255, 0.2);
-$gradient-color: linear-gradient(95deg, #64E275 -30.35%, #11B6BC 27.45%, #1776B1 146.5%);
-$gradient-backgroud: linear-gradient(93deg, #64E275 -74.03%, #11B6BC 12.62%, #1776B1 99.27%);
-
-$mobile: 480px;
-$desktop: 768px;
-$large-desktop: 1200px;
-
-// Spacing
-$container-max-width: 120rem;
-$container-width: 95%;
-
-//Fonts
-
-$textFont : 'Space Grotesk';
-$mobileTextSize : 1.5rem;
-$desktopTextSize: 2.4rem;
-$desktopTitleTextSize: 4.8rem;
-$mobileSmallTextSize: 1.2rem;
-$mobileBigTextSize: 1.8rem;
-$font-style: normal;
-$line-height: normal;
-
-$mobileTextWeight: 400;
-$desktopTextWeight: 400;
-$maxTextWeight: 700;
-
-
-// Z-index layers
-$z-logo: 1001;
-$z-menu: 1000;
-$z-fixed-header: 10000;
+@forward 'variables';
+@forward 'colors';
+@use 'variables' as *;
+@use 'colors' as *;
 
 html {
   box-sizing: border-box;
@@ -51,14 +20,14 @@ body {
   padding: 0;
   font-family: $textFont;
   line-height: $line-height;
-  color: $font-color;
+  color:$font-color;
   height: 100vh;
-  background-image: url('/wp-content/themes/practice-theme/img/background_image.jpg');
+  background-image: url('/wp-content/themes/practice-theme/img/background-image.jpg');
   background-repeat: repeat;
   background-size: auto;
   background-position: top left;
   background-attachment: fixed;
-  background-color: black;
+  background-color: $background-color;
 
   background-size: 572px;
 

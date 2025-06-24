@@ -1,4 +1,6 @@
-@use 'header';
-@use 'footer';
-@use 'form';
-@use 'button';
+
+@use 'base';   
+@use 'components/header';
+@use 'components/footer';
+@use 'components/form';
+@use 'components/button';
