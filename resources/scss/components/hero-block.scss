@@ -1,0 +1,94 @@
+@use '../base.scss' as *;
+
+
+.hero-section {
+    align-items: center;
+    justify-items: start;
+    background-size: cover;
+    background-position: center;
+
+
+
+
+    .hero-content {
+
+        z-index: 0;
+
+        flex-direction: column;
+        padding-top: 8rem;
+        padding-bottom: 13.6rem;
+        letter-spacing: normal;
+        max-width: 100vw;
+
+
+
+        @media (min-width: $desktop) {
+            gap: 4.2rem;
+        }
+
+        .hero-title {
+            font-family: 'Wallnutt Corps';
+
+            line-height: clamp(4.9rem, 6vw, 12rem);
+            font-size: clamp(5rem, 6vw, 12rem);
+            font-family: 'Wallnutt Corps', sans-serif;
+            font-weight: 400;
+            margin-bottom: 1.6rem;
+            max-width: 16ch;
+
+            .last-word {
+                font-family: 'Wallnutt Corps';
+                background: $gradient-color;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-weight: 400;
+            }
+        }
+
+        .hero-description {
+            font-size: 1.5rem;
+            font-family: 'Space Grotesk', sans-serif;
+            line-height: 2.2rem;
+            max-width: 31ch;
+            margin-bottom: 2rem;
+
+            @media (min-width: $desktop) {
+                margin-bottom: 4rem;
+                line-height: 100%;
+                font-size: 2.4rem;
+                max-width: 40ch;
+            }
+
+        }
+
+        .button--hero {
+            justify-self: start;
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            padding: none;
+            font-size: $mobileTextSize;
+
+            background:
+                linear-gradient(#000, #000) padding-box,
+                linear-gradient(91deg, #64e275 -43.25%, #11b6bc 28.3%, #1776b1 99.85%) border-box;
+            border: 1.47px solid transparent;
+            border-radius: 0.147rem;
+            width: fit-content;
+            height: clamp(3.6rem, 6vw, 5.5rem);
+            overflow: hidden;
+
+            @media (min-width: $desktop) {
+                border-radius: 0.2rem;
+                order: 2px solid transparent;
+                font-size: 2.4rem;
+
+            }
+
+
+        }
+
+    }
+}

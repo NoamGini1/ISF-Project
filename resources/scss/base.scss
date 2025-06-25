@@ -6,6 +6,7 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; // 10px = 1rem
+  scroll-behavior: smooth;
 }
 
 *,
@@ -20,7 +21,7 @@ body {
   padding: 0;
   font-family: $textFont;
   line-height: $line-height;
-  color:$font-color;
+  color: $font-color;
   height: 100vh;
   background-image: url('/wp-content/themes/practice-theme/img/background-image.jpg');
   background-repeat: repeat;

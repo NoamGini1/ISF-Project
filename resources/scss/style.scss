@@ -1,6 +1,8 @@
 
 @use 'base';   
-@use 'components/header';
+@use 'header';
 @use 'components/footer';
 @use 'components/form';
 @use 'components/button';
+@use 'components/hero-block';
+@use 'components/front-page.scss'
