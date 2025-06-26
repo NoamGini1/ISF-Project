@@ -1,0 +1,124 @@
+@use "../../resources/scss/base.scss" as *;
+
+.facts-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: $facts-section-background;
+
+    .facts-section-content {
+        width: 30ch;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        letter-spacing: normal;
+        padding: 9.3rem 0;
+
+
+        @media (min-width: 768px) {
+            width: 100%;
+            max-width: none;
+            padding: 0;
+            padding: 4rem 0;
+        }
+
+        .facts-list {
+            padding: 0;
+            width: 100%;
+            list-style: none;
+            text-align: center;
+            margin: 0;
+
+            @media (min-width: 768px) {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                text-align: le;
+                gap: 0;
+            }
+
+            .fact-item {
+                line-height: 1;
+                font-weight: 400;
+                margin-bottom: 2rem;
+                margin: 0;
+                padding: 0;
+
+                @media (min-width: 768px) {
+                    margin-bottom: 0;
+
+                    .fact-content {
+                        display: flex;
+                        align-items: center;
+                        gap: 4rem;
+                        text-align: left;
+                        width: 100%;
+                        padding: 2rem 0;
+                    }
+                }
+
+                h3 {
+                    font-size: clamp(5.5rem, 6vw, 8.8rem);
+                    text-transform: uppercase;
+                    margin: 0;
+                    padding: 0;
+                    margin-bottom: 1rem;
+
+
+                    @media (min-width: 768px) {
+                        margin-bottom: 0;
+                        flex: 1;
+                        text-align: center;
+                    }
+                }
+
+                p {
+                    line-height: 1;
+                    font-size: clamp(1.5rem, 4vw, 2.4rem);
+                    max-width: 30ch;
+                    text-align: center;
+                    margin: 0;
+                    padding: 0;
+
+                    @media (min-width: 768px) {
+                        text-align: left;
+                        max-width: none;
+                        flex: 1;
+                    }
+                }
+            }
+
+            .separator {
+                height: 2px;
+                background-color: $font-color;
+                border-radius: 0.2rem;
+                margin: 2.8rem auto 4rem auto;
+
+
+                @media (min-width: 768px) {
+                    height: 60px;
+                    width: 2px;
+                    margin: 0 4rem 0 0;
+                    flex: 0 0 auto;
+                    align-self: center;
+                }
+            }
+        }
+
+        .credit {
+            font-weight: 300;
+            font-size: clamp(1.2rem, 2vw, 1.4rem);
+            line-height: 1;
+            letter-spacing: 0;
+            margin: 7.4rem auto 0 auto;
+            width: 20ch;
+
+            @media (min-width: 768px) {
+                width: auto;
+                max-width: none;
+                margin: 1rem 0 0 0;
+                text-align: left;
+            }
+        }
+    }
+}

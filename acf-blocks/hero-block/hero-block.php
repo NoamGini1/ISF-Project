@@ -8,7 +8,9 @@ $bg_image = get_field('background_image');
 <section
     class="hero-section"
     style="<?php if (!empty($bg_image['url'])): ?>background-image: url('<?php echo esc_url($bg_image['url']); ?>')<?php endif; ?>">
-    <div class="hero-content container">
+    
+    <div class="main-layout">
+        <div class="hero-content container">
 
         <?php if (!empty($title)) : ?>
             <?php
@@ -33,4 +35,6 @@ $bg_image = get_field('background_image');
                 <?php echo esc_html($button['title']); ?>
             </a>
         <?php endif; ?>
+        </div>
+    </div>
 </section>
