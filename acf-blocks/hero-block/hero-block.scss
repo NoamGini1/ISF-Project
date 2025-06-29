@@ -27,7 +27,7 @@
         }
 
         .hero-title {
-            font-family: 'Wallnutt Corps';
+            font-family: $titleFont;
 
             line-height: clamp(4.9rem, 6vw, 12rem);
             font-size: clamp(5rem, 6vw, 12rem);
@@ -36,18 +36,16 @@
             margin-bottom: 1.6rem;
             max-width: 16ch;
 
-            .last-word {
-                font-family: 'Wallnutt Corps';
+            .last-word {          
                 background: $gradient-color;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
-                font-weight: 400;
             }
         }
 
         .hero-description {
-            font-size: 1.5rem;
-            font-family: 'Space Grotesk', sans-serif;
+            font-size: $mobileTextSize;
+            font-family: $textFont;
             line-height: 2.2rem;
             max-width: 31ch;
             margin-bottom: 2rem;

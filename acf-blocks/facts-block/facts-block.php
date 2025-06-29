@@ -1,15 +1,22 @@
+<?php 
+    $facts_rows = get_field('facts_list');
+    $credit_text = get_field('credit_text');
+   
+
+?>
+
 <section class="facts-section">
     <div class="main-layout">
         <div class="facts-section-content">
             <ul class="facts-list">
-                <?php if (have_rows('facts_list')): ?>
+                <?php if ($facts_rows): ?>
                     <?php 
-                    $total = count(get_field('facts_list')); // count total to hide last separator
+                    $total = count($facts_rows); // count total to hide last separator
                     $index = 0;
-                    while (have_rows('facts_list')): the_row(); 
+                   foreach( $facts_rows as $row):
                         $index++;
-                        $fact_title = get_sub_field('fact_title');
-                        $fact_description = get_sub_field('fact_description');
+                        $fact_title = $row['fact_title'];
+                        $fact_description = $row['fact_description'];
                     ?>
                         <li class="fact-item">
                             <div class="fact-content">
@@ -26,12 +33,12 @@
                                 <?php endif; ?>
                             </div>
                         </li>
-                    <?php endwhile; ?>
+                    <?php endforeach; ?>
                 <?php endif; ?>
             </ul>
 
-            <?php if (get_field('credit_text')): ?>
-                <small class="credit"><?= esc_html(get_field('credit_text')); ?></small>
+            <?php if ($credit_text): ?>
+                <small class="credit"><?= esc_html($credit_text); ?></small>
             <?php endif; ?>
         </div>
     </div>

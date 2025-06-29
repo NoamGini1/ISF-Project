@@ -27,3 +27,36 @@ function practice_theme_assets()
     );
 }
 add_action('wp_enqueue_scripts', 'practice_theme_assets');
+
+function practice_theme_block_assets() {
+    wp_enqueue_style(
+        'hero-block-style', 
+        get_template_directory_uri() . '/dist/css/blocks/hero-block.css', 
+        array(), 
+        filemtime(get_template_directory() . '/dist/css/blocks/hero-block.css')
+    );
+    
+    wp_enqueue_style(
+        'facts-block-style', 
+        get_template_directory_uri() . '/dist/css/blocks/facts-block.css', 
+        array(), 
+        filemtime(get_template_directory() . '/dist/css/blocks/facts-block.css')
+    );
+    
+    wp_enqueue_script(
+        'hero-block-script', 
+        get_template_directory_uri() . '/dist/js/blocks/hero-block.js', 
+        ['jquery'],
+        filemtime(get_template_directory() . '/dist/js/blocks/hero-block.js'),
+        true
+    );
+    
+    wp_enqueue_script(
+        'facts-block-script', 
+        get_template_directory_uri() . '/dist/js/blocks/facts-block.js', 
+        ['jquery'],
+        filemtime(get_template_directory() . '/dist/js/blocks/facts-block.js'),
+        true
+    );
+}
+add_action('wp_enqueue_scripts', 'practice_theme_block_assets');

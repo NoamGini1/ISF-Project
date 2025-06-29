@@ -1,7 +1,9 @@
 @forward 'variables';
 @forward 'colors';
+@forward 'fonts';
 @use 'variables' as *;
 @use 'colors' as *;
+@use 'fonts' as *;
 
 html {
   box-sizing: border-box;

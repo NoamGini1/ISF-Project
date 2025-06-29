@@ -1,4 +1,5 @@
 <?php
+
 $title = get_field('title');
 $description = get_field('description');
 $button = get_field('button');
@@ -27,13 +28,10 @@ $bg_image = get_field('background_image');
             <div class="hero-description"><?php echo esc_html($description); ?></div>
         <?php endif; ?>
 
-        <?php if (!empty($button)) : ?>
-            <a
-                class="button button--hero"
-                href="<?php echo esc_url($button['url']); ?>"
-                target="<?php echo esc_attr($button['target'] ?: '_self'); ?>">
-                <?php echo esc_html($button['title']); ?>
-            </a>
+        <?php if (!empty($button)) : 
+                $button['class'] ="button--hero";
+               get_template_part('template-parts/button/button', null, array('button' => $button));
+                ?>
         <?php endif; ?>
         </div>
     </div>
