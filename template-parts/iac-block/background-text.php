@@ -1,0 +1,1 @@
+     <div class="iac-block-background-text"><?php _e('IAC 2024', 'practice theme') ?></div>

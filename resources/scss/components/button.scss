@@ -27,4 +27,58 @@
         width: auto;
         height: 5.5rem;
     }
+
 }
+    .button--hero {
+    justify-self: start;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 2rem 3rem;
+    font-size: $mobileTextSize;
+    text-transform: uppercase;
+    width: fit-content;
+    height: clamp(3.6rem, 6vw, 5.5rem);
+    border-radius: 0.147rem;
+    
+    background: transparent;
+    border: none;
+    overflow: hidden;
+
+      @media (min-width: $desktop) {
+            border-radius: 0.2rem;
+            order: 2px solid transparent;
+            font-size: $desktopTextSize;
+            height: clamp(4rem, 5vw, 6rem);
+             padding: 2rem 4rem;
+
+        }
+}
+
+.button--hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    padding: 0.147rem; 
+    background: linear-gradient(93.05deg, #64E275 -74.03%, #11B6BC 12.62%, #1776B1 99.27%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+
+     @media (min-width: $desktop) {
+        padding: 0.2rem;
+     }
+}
+
+      
+
+
+    
+

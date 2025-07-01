@@ -58,5 +58,12 @@ function practice_theme_block_assets() {
         filemtime(get_template_directory() . '/dist/js/blocks/facts-block.js'),
         true
     );
+
+     wp_enqueue_style(
+        'iac-block-style', 
+        get_template_directory_uri() . '/dist/css/blocks/iac-block.css', 
+        array(), 
+        filemtime(get_template_directory() . '/dist/css/blocks/iac-block.css')
+    );
 }
 add_action('wp_enqueue_scripts', 'practice_theme_block_assets');
