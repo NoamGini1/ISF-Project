@@ -1,15 +1,11 @@
 .main-layout {
-  display: grid;
-  grid-template-columns: 2.24rem 1fr 2.24rem;
+  margin: 0 2.8rem;
 
   @media (min-width: 1200px) {
-    grid-template-columns: 4.64rem 1fr 4.64rem;
+    margin: 0 4rem;
   }
 
   @media (min-width: 1400px) {
-    grid-template-columns: 16.64rem 1fr 16.64rem;
+    margin: 0 13rem;
   }
-}
-.main-layout >* {
-    grid-column: 2;
 }

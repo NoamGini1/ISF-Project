@@ -35,4 +35,16 @@ add_action('acf/init', function () {
             wp_enqueue_script('facts-block-script', get_template_directory_uri() . '/dist/js/blocks/facts-block.js', ['jquery'], null, true);
         }
     ));
+
+    acf_register_block_type(array(
+        'name'              => 'about-us-block',
+        'title'             => __('About us Block', 'practice-theme'),
+        'description'       => __('A custom About us section block', 'practice-theme'),
+        'render_template'   => get_template_directory() . '/acf-blocks/about-us-block/about-us-block.php',
+        'category'          => 'layout',
+        'icon'              => 'editor-ul',
+        'keywords'          => array('text', 'info'),
+        'mode'              => 'edit',
+        'supports'          => array('align' => false),
+    ));
 });
