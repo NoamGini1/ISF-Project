@@ -1,7 +1,7 @@
-<?php 
-$description_bold = get_query_var('description_bold');
-$description_regular = get_query_var('description_regular');
-$button = get_query_var('button');
+<?php
+$description_bold = $args['description_bold'] ?? '';
+$description_regular = $args['description_regular'] ?? '';
+$button = $args['button'] ?? null;
 ?>
 
 <div class="iac-block-bottom">

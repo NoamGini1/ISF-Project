@@ -12,20 +12,17 @@ $logo = get_field('logo');
         
         <div class="iac-block-content">
             <div class="iac-block-top">
-                <?php 
-   
-                set_query_var('logo', $logo);
-                set_query_var('title', $title);
-                set_query_var('description_bold', $description_bold);
-                set_query_var('description_regular', $description_regular);
-                set_query_var('button', $button);
-                ?>
                 
-                <?php get_template_part('template-parts/iac-block/iac-logo'); ?>
+                <?php get_template_part('template-parts/iac-block/iac-logo', null, array('logo' => $logo)); ?>
                 
-                <?php get_template_part('template-parts/iac-block/image-title'); ?>
+                <?php get_template_part('template-parts/iac-block/image-title', null, array('title' => $title)); ?>
                 
-                <?php get_template_part('template-parts/iac-block/bottom-content'); ?>
+                <?php get_template_part('template-parts/iac-block/bottom-content', null, array(
+                    'description_regular' => $description_regular,
+                    'description_bold' => $description_bold,
+                    'button' => $button
+                ));
+             ?>
             </div>
         </div>
     </div>

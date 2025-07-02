@@ -1,4 +1,4 @@
-<?php $title = get_query_var('title'); ?>
+<?php $title = $args['title'] ?? '';?>
 <div class="iac-block-image-title">
     <img src="<?= get_template_directory_uri(); ?>/img/shooting-star.png" alt="Star" class="iac-block-star" />
     
