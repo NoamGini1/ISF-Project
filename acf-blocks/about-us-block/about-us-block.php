@@ -1,28 +1,37 @@
 <?php
 $title = get_field('title');
-$bold_description = get_field('bold_description');
-$regular_description = get_field('regular_description');
+$description = get_field('description');
 $image = get_field('image');
 $button = get_field('button');
 ?>
 
 <section class="about-us-block">
 
-  <?php 
-  //Image component
-    get_template_part('template-parts/about-us-block/image', null, array('image' => $image)); 
-    ?>
+  <div class="about-us-block-image">
+    <?php if ($image): ?>
+      <img src="<?= esc_url($image['url']); ?>" alt="<?= esc_attr($image['alt'] ?? '') ?>" />
+    <?php endif; ?>
+  </div>
 
-    <div class="main-layout">
-     <?php 
-        //Content component
-        get_template_part('template-parts/about-us-block/content', null, array(
-            'title' => $title,
-            'bold_description' => $bold_description,
-            'regular_description' => $regular_description,
-            'button' => $button
-        )); 
-        ?>
+  <div class="main-layout">
+
+    <div class="about-us-block-content">
+      <?php if ($title): ?>
+        <h2 class="about-us-block-title"><?= esc_html($title); ?></h2>
+      <?php endif; ?>
+
+      <div class="about-us-block-description">
+        <?php if ($description): ?>
+          <?= $description; ?>
+        <?php endif; ?>
+      </div>
+
+      <?php
+      if (!empty($button)):
+        $button['class'] = "button--hero";
+        get_template_part('template-parts/button/button', null, array('button' => $button));
+      endif; ?>
     </div>
+  </div>
 
 </section>
