@@ -37,4 +37,16 @@ add_action('acf/init', function () {
         'supports'          => ['align' => false],
     ));
 
+    acf_register_block_type(array(
+        'name'              => 'companies-block',
+        'title'             => __('Companies Block', 'practice-theme'),
+        'description'       => __('A custom companies block', 'practice-theme'),
+        'render_template'   => get_template_directory() . '/acf-blocks/companies-block/companies-block.php',
+        'category'          => 'layout',
+        'icon'              => 'info',
+        'keywords'          => ['info', 'logo', 'title'],
+        'mode'              => 'edit',
+        'supports'          => ['align' => false],
+    ));
+
 });
