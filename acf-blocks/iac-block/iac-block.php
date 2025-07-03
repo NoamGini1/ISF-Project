@@ -15,7 +15,7 @@ $logo = get_field('logo');
                 
                 <?php get_template_part('template-parts/iac-block/iac-logo', null, array('logo' => $logo)); ?>
                 
-                <?php get_template_part('template-parts/iac-block/image-title', null, array('title' => $title)); ?>
+                <?php get_template_part('template-parts/image-title/image-title', null, array('title' => $title)); ?>
                 
                 <?php get_template_part('template-parts/iac-block/bottom-content', null, array(
                     'description_regular' => $description_regular,

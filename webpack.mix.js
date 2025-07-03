@@ -8,6 +8,7 @@ mix
   .sass('acf-blocks/hero-block/hero-block.scss', 'dist/css/blocks')
   .sass('acf-blocks/facts-block/facts-block.scss', 'dist/css/blocks')
   .sass('acf-blocks/iac-block/iac-block.scss', 'dist/css/blocks')
+  .sass('acf-blocks/companies-block/companies-block.scss', 'dist/css/blocks')
   
   .autoload({
     jquery: ['$', 'window.jQuery', 'jQuery'],

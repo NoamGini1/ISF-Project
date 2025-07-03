@@ -65,5 +65,12 @@ function practice_theme_block_assets() {
         array(), 
         filemtime(get_template_directory() . '/dist/css/blocks/iac-block.css')
     );
+
+    wp_enqueue_style(
+        'companies-block-style', 
+        get_template_directory_uri() . '/dist/css/blocks/companies-block.css', 
+        array(), 
+        filemtime(get_template_directory() . '/dist/css/blocks/companies-block.css')
+    );
 }
 add_action('wp_enqueue_scripts', 'practice_theme_block_assets');
