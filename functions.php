@@ -63,7 +63,14 @@ function practice_theme_block_assets() {
         'about-us-block-style', 
         get_template_directory_uri() . '/dist/css/blocks/about-us-block.css', 
         array(), 
-        filemtime(get_template_directory() . '/dist/css/blocks/about-us-block.css')
-    );
+        filemtime(get_template_directory() . '/dist/css/blocks/about-us-block.css')       
+     );
+  
+     wp_enqueue_style(
+        'iac-block-style', 
+        get_template_directory_uri() . '/dist/css/blocks/iac-block.css', 
+        array(), 
+        filemtime(get_template_directory() . '/dist/css/blocks/iac-block.css')
+     );
 }
 add_action('wp_enqueue_scripts', 'practice_theme_block_assets');

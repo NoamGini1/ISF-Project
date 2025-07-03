@@ -1,6 +1,4 @@
 @use "../../resources/scss/base.scss" as *;
-
-
 .hero-section {
     align-items: center;
     justify-items: start;
@@ -57,35 +55,6 @@
                 font-size: 2.4rem;
                 max-width: 40ch;
             }
-
-        }
-
-        .button--hero {
-            justify-self: start;
-            position: relative;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            padding: none;
-            font-size: $mobileTextSize;
-
-            background:
-                linear-gradient(#000, #000) padding-box,
-                linear-gradient(91deg, #64e275 -43.25%, #11b6bc 28.3%, #1776b1 99.85%) border-box;
-            border: 1.47px solid transparent;
-            border-radius: 0.147rem;
-            width: fit-content;
-            height: clamp(3.6rem, 6vw, 5.5rem);
-            overflow: hidden;
-
-            @media (min-width: $desktop) {
-                border-radius: 0.2rem;
-                order: 2px solid transparent;
-                font-size: 2.4rem;
-
-            }
-
 
         }
 
