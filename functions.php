@@ -5,6 +5,7 @@ require get_template_directory() . '/inc/custom-post-types.php';
 require get_template_directory() . '/services/handle-subscribe-form.php';
 require get_template_directory() . '/inc/menus.php';
 require get_template_directory() . '/acf-blocks/acf-register.php';
+require get_template_directory() . '/inc/acf-options.php';
 
 function practice_theme_assets()
 {

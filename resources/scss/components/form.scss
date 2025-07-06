@@ -1,7 +1,6 @@
 @use '../base' as *;
 
 .custom-form {
-
     padding: 0 7vw 1rem 7vw;
 
     @media (min-width: $desktop) {
@@ -22,12 +21,9 @@
         @media (min-width: $desktop) {
             font-size: $desktopTitleTextSize;
             width: 100%;
-
-
         }
     }
 
-    // === Description ===
     .form-description {
         font-weight: 300;
         font-size: $mobileSmallTextSize;
@@ -39,7 +35,6 @@
         @media (min-width: $desktop) {
             font-size: $mobileSmallTextSize;
             width: 70%;
-
         }
     }
 
@@ -63,6 +58,53 @@
                 font-size: 1.4rem;
             }
 
+            input::placeholder,
+            textarea::placeholder {
+                color: #DFDFDF;
+                opacity: 1;
+            }
+
+            .phone-field-mobile {
+                display: flex;
+                gap: 1rem;
+
+                @media (min-width: $desktop) {
+                    display: none;
+                }
+
+                .phone-code {
+                    width: 20%;
+                    max-width: 7rem;
+                    text-align: center;
+                }
+
+                .phone-number {
+                    flex: 1;
+                    width: auto;
+                }
+
+            }
+
+            .phone-field-desktop {
+                display: none;
+
+                @media (min-width: $desktop) {
+                    display: flex;
+                }
+
+                .phone-code {
+                    width: 20%;
+                    max-width: 7rem;
+                    text-align: center;
+                }
+
+                .phone-number {
+                    flex: 1;
+                    width: auto;
+                }
+            }
+
+
             .button {
                 display: none;
             }
@@ -72,14 +114,11 @@
                 gap: 2rem;
                 margin-bottom: 0;
 
-
-
                 input,
                 textarea {
                     flex: 1;
                     width: 42.2rem;
                     font-size: 1.8rem;
-
                 }
 
                 .button {
@@ -97,9 +136,7 @@
             align-items: center;
             justify-content: space-between;
 
-
             .button--linkedin {
-
                 display: inline-flex;
                 justify-content: center;
                 align-items: center;
@@ -108,7 +145,6 @@
                 font-size: clamp($mobileSmallTextSize, 2.5vw, $desktopTextSize);
                 font-weight: 600;
                 color: #11B6BC;
-                ;
                 background-color: $font-color;
                 border: none;
                 border-radius: 0.1rem;
@@ -128,10 +164,225 @@
                 .button--linkedin {
                     font-weight: 700;
                     border-radius: 0.2rem;
-
                 }
             }
         }
     }
+}
 
+.custom-form--join-us {
+    padding: 4.2rem 3.7rem;
+    display: flex;
+    flex-direction: column;
+    background-color: $font-color;
+    align-items: center;
+
+    @media (min-width: $desktop) {
+        padding: 10% 21%;
+    }
+
+    .form-title {
+        font-family: $titleFont;
+        font-weight: $mobileTextWeight;
+        font-size: 4.5rem;
+        line-height: 1;
+        white-space: nowrap;
+        width: 100%;
+        letter-spacing: 0;
+        text-align: center;
+        margin-bottom: 1rem;
+        background: $gradient-title;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        @media (min-width: $desktop) {
+            font-size: 9rem;
+            line-height: 7.5rem;
+             margin-bottom: 2.1rem;
+        }
+    }
+
+    .form-description {
+        font-family: $textFont;
+        font-weight: 400;
+        font-size: 1.3rem;
+        line-height: 1.8rem;
+        text-align: center;
+        color: $background-color;
+        margin-bottom: 2.7rem;
+        width: 99%;
+
+        @media (min-width: $desktop) {
+            font-size: 2.4rem;
+            line-height: 1;
+            margin-bottom: 5rem;
+            width: 90%;
+        }
+    }
+
+    .form-wrapper {
+        width: 100%;
+
+        @media (min-width: $desktop) {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .form-row {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(2rem, 1.3vw, 3rem);
+
+                @media (min-width: $desktop) {
+                    .button {
+                        display: none;
+                    }
+                }
+
+            @media (min-width: $desktop) {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                align-items: start;
+            }
+
+            .form-group {
+                display: flex;
+                flex-direction: column;
+                min-width: 0;
+                width: 100%;
+
+                &:has(textarea) {
+                    @media (min-width: $desktop) {
+                        grid-column: 1 / -1;
+
+                    }
+                }
+            }
+
+            input,
+            textarea {
+                width: 100%;
+                border-radius: 0.2rem;
+                background-color: transparent;
+                border: 0.5px solid black;
+                padding: 1rem;
+                font-size: clamp(1.5rem, 1.5vw, 2.4rem);
+
+                min-height: clamp(4.5rem, 3.7vw, 7.1rem);
+                max-width: 100%;
+                min-width: 0;
+                font-weight: 400;
+                letter-spacing: 0;
+
+
+                height: auto;
+                max-height: 5.4rem;
+
+                box-sizing: border-box;
+
+
+
+                &::placeholder {
+                    color: #666;
+                    opacity: 1;
+
+                    @media (min-width: $desktop) {
+
+                        color: black;
+                        font-weight: 400;
+                        letter-spacing: 0;
+                    }
+
+                }
+
+            }
+
+
+            .phone-field-mobile {
+                display: flex;
+                gap: 1rem;
+
+                @media (min-width: $desktop) {
+                    display: none;
+                }
+
+                .phone-code {
+                    width: 20%;
+                    text-align: center;
+
+                }
+
+                .phone-number {
+                    flex: 1;
+
+                }
+            }
+
+            .phone-field-desktop {
+                display: none;
+
+                @media (min-width: $desktop) {
+                    display: flex;
+                    gap: 1rem;
+                }
+
+                .phone-code {
+                    width: 20%;
+
+                    text-align: center;
+                }
+
+                .phone-number {
+                    flex: 1;
+                    width: auto;
+                }
+            }
+        }
+
+
+        .form-actions {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            margin-top: 2rem;
+            gap: 1rem;
+
+            .button {
+                // border: 2px solid  #E2E2E2;
+                color: #898989;
+                display: flex;
+                width: 100%;
+                height: clamp(5.5rem, 5vw, 11rem);
+                font-size: $desktopTextSize;
+                text-transform: uppercase;
+                justify-content: center;
+                align-items: center;
+                background-color: transparent;
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.1);
+                }
+
+                @media (min-width: $desktop) {
+                    max-width: 17%;
+
+                    font-size: clamp(1.5rem, 1.5vw, 2.4rem);
+                    max-height: 5.5rem;
+                }
+            }
+
+
+
+            .button--linkedin {
+                margin-left: 0;
+
+                @media (min-width: $desktop) {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
 }

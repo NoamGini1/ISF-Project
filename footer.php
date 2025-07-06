@@ -11,9 +11,11 @@
         <!--subscribe component-->
         <div class="footer-subscribe-form">
             <?php
-                $form_id = 46;
-                set_query_var('form_id', $form_id);
-                get_template_part('template-parts/form/form','render');
+              
+            $footer_form_id = get_field('footer_form_id', 'option');
+            if ($footer_form_id) {
+                get_template_part('template-parts/form/form-render', null, ['form_id' => $footer_form_id]);
+            }
             ?>
 
         </div>
