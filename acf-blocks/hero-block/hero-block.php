@@ -3,7 +3,8 @@
 $title = get_field('title');
 $description = get_field('description');
 $button = get_field('button');
-$bg_image = get_field('background_image');
+$bg_image = get_field('background');
+
 ?>
 
 <section
